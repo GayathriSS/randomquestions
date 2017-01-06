@@ -1,0 +1,19 @@
+public class Solution {
+    public int hammingDistance(int x, int y) {
+        String binX= Integer.toBinaryString(x);
+        String binY= Integer.toBinaryString(y);
+        while(binX.length()<binY.length()){
+            binX=0+binX;
+        }
+        while(binX.length()>binY.length()){
+            binY=0+binY;
+        }
+        int count=0;
+        for(int i=0;i<binX.length();i++){
+            if(binX.charAt(i) != binY.charAt(i) ){
+                count++;
+            }
+        }
+        return count;
+    }
+}
